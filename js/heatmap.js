@@ -3,6 +3,12 @@ const svg = d3.select("svg");
 //* Editing the svg values
 svg.attr("width", 800).attr("height", data.length * 150);
 
+//* color scale
+const colorScale = d3
+	.scaleLinear()
+	.domain([-10, 0, 7, 14, 21, 24])
+	.range(["#814ee7", "#3f24ec", "#79e87C", "#fbe157", "#ff9737", "#fe3b3b"]);
+
 //* Group
 const dataPoints = svg
 	.selectAll("g.data-point")
@@ -43,6 +49,6 @@ monthGroups
 	.append("rect")
 	.attr("x", 0)
 	.attr("y", 0)
-	.attr("width", 40)
-	.attr("height", 140)
-	.style("fill", "red");
+	.attr("width", 50)
+	.attr("height", 150)
+	.style("fill", (d) => colorScale(d));
