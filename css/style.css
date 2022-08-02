@@ -45,3 +45,12 @@ h1 {
   background-position: 0 50%;
   padding: 0 0 0 64px;
 }
+
+text {
+  fill: var(--text-color);
+}
+
+text.city {
+  font-size: 32px;
+  font-weight: 700;
+}

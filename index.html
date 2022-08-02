@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Heat Map</title>
-  <link rel="stylesheet" href="css/_base.css">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <header>
-    <h1>Compare monthly temperatures across the globe</h1>
 
-    <select>
-      <option value="c">C</option>
-      <option value="f">F</option>
-    </select>
-  </header>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heat Map</title>
+    <link rel="stylesheet" href="css/_base.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
 
-  <svg></svg>
+  <body>
+    <header>
+      <h1>Compare monthly temperatures across the globe</h1>
 
-  <script src="js/d3.min.js"></script>
-  <script src="js/data.js"></script>
-  <script src="js/data-collector.js"></script>
-</body>
+      <select>
+        <option>C</option>
+        <option>F</option>
+      </select>
+    </header>
+
+    <svg></svg>
+
+    <script src="js/d3.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/data-collector.js"></script>
+    <script src="js/heatmap.js"></script>
+  </body>
+
 </html>
