@@ -65,8 +65,16 @@ text.temp {
   dominant-baseline: middle;
   font-size: 18px;
   font-weight: 700;
+  opacity: 0;
 }
 
 circle {
 	fill: var(--text-color);
+  opacity: 0;
+}
+
+path {
+  stroke: var(--text-color);
+  fill: none;
+  stroke-width: 4px;
 }

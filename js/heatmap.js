@@ -9,6 +9,10 @@ const colorScale = d3
 	.domain([-10, 0, 7, 14, 21, 24])
 	.range(["#814ee7", "#3f24ec", "#79e87C", "#fbe157", "#ff9737", "#fe3b3b"]);
 const boxScale = d3.scaleLinear().domain([-20, 45]).range([150, 0]);
+const lineGenerator = d3
+	.line()
+	.x((_, i) => 225 + 50 * i)
+	.y((d) => boxScale(d));
 
 //* Group
 const dataPoints = svg
@@ -61,6 +65,7 @@ monthGroups
 	.attr("cy", (d) => boxScale(d))
 	.attr("r", 15);
 
+//* Text waving
 monthGroups
 	.append("text")
 	.attr("class", "temp")
@@ -68,3 +73,6 @@ monthGroups
 	.attr("y", (d) => boxScale(d) + 2)
 	.text((d) => d)
 	.style("fill", (d) => colorScale(d));
+
+//* Line path
+dataPoints.append("path").datum((d) => d.months).attr("d", (d) => lineGenerator(d));
