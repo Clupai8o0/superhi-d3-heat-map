@@ -45,10 +45,21 @@ const monthGroups = months
 	.attr("class", "month")
 	.attr("transform", (_, i) => `translate(${i * 50}, 0)`);
 
+// Chart
 monthGroups
 	.append("rect")
 	.attr("x", 0)
 	.attr("y", 0)
 	.attr("width", 50)
 	.attr("height", 150)
+	.style("fill", (d) => colorScale(d));
+
+monthGroups.append("circle").attr("cx", 25).attr("cy", 75).attr("r", 15);
+
+monthGroups
+	.append("text")
+	.attr("class", "temp")
+	.attr("x", 25)
+	.attr("y", 77)
+	.text((d) => d)
 	.style("fill", (d) => colorScale(d));
