@@ -1,0 +1,29 @@
+Links:
+https://github.com/tokotype/Mohave-Typefaces
+https://www.behance.net/gallery/8668939/Mohave-Free-Typefaces
+
+Site colors:
+
+Background: #272727
+White: #ffffff
+
+Color temperatures (ºC to color)
+
+-10 #814ee7
+0 #3f24ec
+7 #79e87C
+14 #fbe157
+21 #ff9737
+25 #fe3b3b
+
+Typography:
+
+Mohave by Tokotype
+
+Header: 24px at 700 weight
+City: 32px at 700
+Country: 16px at 400
+Temperature: 18px at 700
+
+
+
