@@ -48,9 +48,14 @@ h1 {
 
 text {
   fill: var(--text-color);
+  text-anchor: end;
 }
 
 text.city {
   font-size: 32px;
   font-weight: 700;
+}
+
+text.country {
+  opacity: 0.8;
 }

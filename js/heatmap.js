@@ -10,9 +10,16 @@ const dataPoints = svg
 	.attr("class", "data-point")
 	.attr("transform", (_, i) => `translate(0, ${i * 150})`);
 
+// text
 dataPoints
 	.append("text")
 	.attr("x", 175)
 	.attr("y", 70)
 	.attr("class", "city")
 	.text((d) => d.city);
+dataPoints
+	.append("text")
+	.attr("x", 175)
+	.attr("y", 100)
+	.attr("class", "country")
+	.text((d) => d.country);
