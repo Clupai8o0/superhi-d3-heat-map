@@ -1,0 +1,25 @@
+@font-face {
+	font-family: Mohave;
+	src: url(../assets/mohave-light.woff2), url(../assets/mohave-light.woff);
+}
+@font-face {
+	font-family: Mohave;
+	font-weight: 700;
+	src: url(../assets/mohave-bold.woff2), url(../assets/mohave-bold.woff);
+}
+
+:root {
+	--background: #272727;
+	--text-color: #fff;
+}
+
+body {
+  font-size: 16px;
+	line-height: 1.25;
+	font-family: Mohave;
+
+	background-color: var(--background);
+	color: var(--text-color);
+	margin: 160px auto 80px auto;
+	width: 800px;
+}
