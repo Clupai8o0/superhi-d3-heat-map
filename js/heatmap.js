@@ -8,6 +8,7 @@ const colorScale = d3
 	.scaleLinear()
 	.domain([-10, 0, 7, 14, 21, 24])
 	.range(["#814ee7", "#3f24ec", "#79e87C", "#fbe157", "#ff9737", "#fe3b3b"]);
+const boxScale = d3.scaleLinear().domain([-20, 45]).range([150, 0]);
 
 //* Group
 const dataPoints = svg
@@ -54,12 +55,16 @@ monthGroups
 	.attr("height", 150)
 	.style("fill", (d) => colorScale(d));
 
-monthGroups.append("circle").attr("cx", 25).attr("cy", 75).attr("r", 15);
+monthGroups
+	.append("circle")
+	.attr("cx", 25)
+	.attr("cy", (d) => boxScale(d))
+	.attr("r", 15);
 
 monthGroups
 	.append("text")
 	.attr("class", "temp")
 	.attr("x", 25)
-	.attr("y", 77)
+	.attr("y", (d) => boxScale(d) + 2)
 	.text((d) => d)
 	.style("fill", (d) => colorScale(d));
