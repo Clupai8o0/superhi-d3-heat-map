@@ -61,20 +61,34 @@ text.country {
 }
 
 text.temp {
-  text-anchor: middle;
-  dominant-baseline: middle;
-  font-size: 18px;
-  font-weight: 700;
-  opacity: 0;
+	text-anchor: middle;
+	dominant-baseline: middle;
+	font-size: 18px;
+	font-weight: 700;
+	opacity: 0;
+  transition: opacity 0.25s;
 }
 
 circle {
 	fill: var(--text-color);
-  opacity: 0;
+	opacity: 0;
+  transition: opacity 0.25s;
 }
 
 path {
-  stroke: var(--text-color);
-  fill: none;
-  stroke-width: 4px;
+	stroke: var(--text-color);
+	fill: none;
+	stroke-width: 4px;
+  transition: opacity 0.25s;
+}
+
+g.data-point:hover circle {
+	opacity: 1;
+}
+g.data-point:hover text.temp {
+	opacity: 1;
+}
+
+g.data-point:hover path {
+	opacity: 0;
 }

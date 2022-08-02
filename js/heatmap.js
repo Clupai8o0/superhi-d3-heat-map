@@ -3,7 +3,7 @@ const svg = d3.select("svg");
 //* Editing the svg values
 svg.attr("width", 800).attr("height", data.length * 150);
 
-//* color scale
+//* scale
 const colorScale = d3
 	.scaleLinear()
 	.domain([-10, 0, 7, 14, 21, 24])
@@ -13,6 +13,7 @@ const lineGenerator = d3
 	.line()
 	.x((_, i) => 225 + 50 * i)
 	.y((d) => boxScale(d));
+const unitScale = d3.scaleLinear().domain([0, 100]).rangeRound([32, 212])
 
 //* Group
 const dataPoints = svg
@@ -65,8 +66,8 @@ monthGroups
 	.attr("cy", (d) => boxScale(d))
 	.attr("r", 15);
 
-//* Text waving
-monthGroups
+//* Temperature texts
+const temperatures = monthGroups
 	.append("text")
 	.attr("class", "temp")
 	.attr("x", 25)
@@ -75,4 +76,17 @@ monthGroups
 	.style("fill", (d) => colorScale(d));
 
 //* Line path
-dataPoints.append("path").datum((d) => d.months).attr("d", (d) => lineGenerator(d));
+dataPoints
+	.append("path")
+	.datum((d) => d.months)
+	.attr("d", (d) => lineGenerator(d));
+
+//* Watching for cel/fah change
+const selectTag = document.querySelector("select");
+selectTag.addEventListener("input", () => {
+	if (this.value === "c") {
+		temperatures.text((d) => d);
+	} else {
+		temperatures.text((d) => unitScale(d));
+	}
+});
